@@ -12,7 +12,7 @@ HEAD: README.md
 
 
 dist/traitbank.json: HEAD
-	make -p dist
+	mkdir -p dist
 	preston cat HEAD \
 	  | grep hasVersion \
 	  | grep -v terms \
