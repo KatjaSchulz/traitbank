@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        run:  curl --silent -L https://github.com/bio-guoda/preston/releases/download/0.11.8/preston.deb > preston.deb && sudo apt install -q ./preston.deb
-        run: apt install -q jq mlr 
+      - run:  curl --silent -L https://github.com/bio-guoda/preston/releases/download/0.11.8/preston.deb > preston.deb && sudo apt install -q ./preston.deb
+      - run: apt install -q jq mlr 
       - name: build
         run: make
       - name: traitbank.tsv
