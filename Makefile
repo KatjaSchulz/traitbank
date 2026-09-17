@@ -13,7 +13,7 @@ HEAD: README.md
 
 dist/traitbank.json: HEAD
 	mkdir -p dist
-	preston cat HEAD \
+	cat HEAD | preston cat \
 	  | grep hasVersion \
 	  | grep -v terms \
 	  | grep -v tbHierarchy \
