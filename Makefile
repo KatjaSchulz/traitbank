@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 
-all: dist/traits.tsv
+all: dist/traitbank.tsv
 
 clean:
 	rm -rf data/ dist/ tmp/
@@ -11,7 +11,7 @@ HEAD: README.md
 
 
 
-dist/traits.json: HEAD
+dist/traitbank.json: HEAD
 	make -p dist
 	preston cat HEAD \
 	  | grep hasVersion \
@@ -19,7 +19,7 @@ dist/traits.json: HEAD
 	  | grep -v tbHierarchy \
 	  | grep -oE "hash://md5/[a-f0-9]{32}" \
 	  | xargs -I{} bash -c "preston cat {} | mlr --itsvlite --ojsonl --no-auto-unflatten cat" \
-	  > dist/traits.json
+	  > dist/traitbank.json
 
-dist/traits.tsv: dist/traits.json json2tsv.jq
-	cat dist/traits.json | jq -f json2tsv.jq > dist/traits.tsv
+dist/traitbank.tsv: dist/traitbank.json json2tsv.jq
+	cat dist/traitbank.json | jq -f json2tsv.jq > dist/traitbank.tsv
