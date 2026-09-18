@@ -9,6 +9,16 @@ jobs:
       - run: sudo apt install -q jq miller
       - name: build
         run: make
+      - name: review report archive
+        uses: actions/upload-artifact@v7
+        with:
+          name: traitbank
+          path: |
+            data/**
+            dist/*
+            README.md
+            Makefile
+            *.jq
       - name: traitbank.tsv
         uses: actions/upload-artifact@v7
         with:
