@@ -1,4 +1,8 @@
+[![TraitBank Snapshot](../../actions/workflows/make.yml/badge.svg)](../../actions/workflows/make.yml)
+
 # TraitBank Index
+
+:warning: work in progress
 
 These are the resources that make up traitbank:
 
