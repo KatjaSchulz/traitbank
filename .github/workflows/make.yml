@@ -16,6 +16,7 @@ jobs:
           path: |
             data/**
             dist/*
+            HEAD
             README.md
             Makefile
             *.jq
