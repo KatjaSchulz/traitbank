@@ -22,3 +22,9 @@ dist/traitbank.json: HEAD
 dist/traitbank.tsv: dist/traitbank.json json2tsv.jq
 	cat header.json | jq --raw-output '. | @tsv' > dist/traitbank.tsv
 	cat dist/traitbank.json | jq --raw-output -f json2tsv.jq >> dist/traitbank.tsv
+
+dist/term.tsv: HEAD
+	cat HEAD | preston cat | grep hasVersion | grep terms | preston cat > dist/term.tsv
+
+dist/taxon.tsv: HEAD
+	cat HEAD | preston cat | grep hasVersion | grep tbHierarchy | preston cat > dist/taxon.tsv
