@@ -9,7 +9,7 @@ HEAD: README.md
 	preston track --algo md5 -f <(cat README.md | grep -oE "^http[^ ]+")
 	preston head --algo md5 > HEAD
 	echo -e "\n## Provenance\n\nRunning \n\`\`\`bash\npreston cat $(preston head --algo md5)\n\`\`\`\n on $(preston head --algo md5 | preston cat | grep "http://www.w3.org/ns/prov#startedAtTime" | head -1 | grep -Eo "[0-9]{4}-[0-9]{2}-[0-9]{2}") using preston v$(preston version) produced:\n\n\`\`\` " >> README.md
-	preston head | preston cat | grep hasVersion >> README.md
+	preston head --algo md5 | preston cat | grep hasVersion >> README.md
 	echo -e "\`\`\`\n"
 
 dist/trait.json: HEAD
