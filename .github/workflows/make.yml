@@ -20,13 +20,13 @@ jobs:
             README.md
             Makefile
             *.jq
-      - name: traitbank.tsv
+      - name: trait.tsv
         uses: actions/upload-artifact@v7
         with:
-          path: dist/traitbank.tsv
+          path: dist/trait.tsv
           archive: false
-      - name: traitbank.json
+      - name: trait.json
         uses: actions/upload-artifact@v7
         with:
-          path: dist/traitbank.json
+          path: dist/trait.json
           archive: false

@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 
-all: dist/traitbank.tsv
+all: dist/trait.tsv
 
 clean:
 	rm -rf data/ dist/ tmp/
@@ -12,7 +12,7 @@ HEAD: README.md
 	preston head | preston cat | grep hasVersion >> README.md
 	echo -e "\`\`\`\n"
 
-dist/traitbank.json: HEAD
+dist/trait.json: HEAD
 	mkdir -p dist
 	cat HEAD | preston cat \
 	  | grep hasVersion \
@@ -20,11 +20,11 @@ dist/traitbank.json: HEAD
 	  | grep -v tbHierarchy \
 	  | grep -oE "hash://md5/[a-f0-9]{32}" \
 	  | xargs -I{} bash -c "preston cat {} | mlr --itsvlite --ojsonl --no-auto-unflatten cat" \
-	  > dist/traitbank.json
+	  > dist/trait.json
 
-dist/traitbank.tsv: dist/traitbank.json json2tsv.jq
-	cat header.json | jq --raw-output '. | @tsv' > dist/traitbank.tsv
-	cat dist/traitbank.json | jq --raw-output -f json2tsv.jq >> dist/traitbank.tsv
+dist/trait.tsv: dist/trait.json json2tsv.jq
+	cat header.json | jq --raw-output '. | @tsv' > dist/trait.tsv
+	cat dist/trait.json | jq --raw-output -f json2tsv.jq >> dist/trait.tsv
 
 dist/term.tsv: HEAD
 	cat HEAD | preston cat | grep hasVersion | grep terms | preston cat > dist/term.tsv
