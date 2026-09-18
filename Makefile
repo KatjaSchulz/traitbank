@@ -20,4 +20,5 @@ dist/traitbank.json: HEAD
 	  > dist/traitbank.json
 
 dist/traitbank.tsv: dist/traitbank.json json2tsv.jq
-	cat dist/traitbank.json | jq --raw-output -f json2tsv.jq > dist/traitbank.tsv
+	cat header.json | jq --raw-output '. | @tsv' > dist/traitbank.tsv
+	cat dist/traitbank.json | jq --raw-output -f json2tsv.jq >> dist/traitbank.tsv
