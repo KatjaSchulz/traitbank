@@ -9,8 +9,6 @@ HEAD: README.md
 	preston track --algo md5 -f <(cat README.md | grep -oE "^http[^ ]+")
 	preston head --algo md5 > HEAD
 
-
-
 dist/traitbank.json: HEAD
 	mkdir -p dist
 	cat HEAD | preston cat \
@@ -22,4 +20,4 @@ dist/traitbank.json: HEAD
 	  > dist/traitbank.json
 
 dist/traitbank.tsv: dist/traitbank.json json2tsv.jq
-	cat dist/traitbank.json | jq -f json2tsv.jq > dist/traitbank.tsv
+	cat dist/traitbank.json | jq --raw-output -f json2tsv.jq > dist/traitbank.tsv
