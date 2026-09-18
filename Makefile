@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 
-all: dist/trait.tsv
+all: dist/trait.tsv dist/term.tsv dist/taxon.tsv
 
 clean:
 	rm -rf data/ dist/ tmp/
