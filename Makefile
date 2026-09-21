@@ -6,7 +6,7 @@ HEAD = $(preston head --algo md5)
 
 TRACK_DATE = $(preston head --algo md5 | preston cat | grep startedAtTime | head -1 | grep -Eo '[0-9]{4}-[0-9]{2}-[0-9]{2}')
 
-all: dist/trait.tsv dist/term.tsv dist/taxon.tsv
+all: dist/trait.tsv dist/term.tsv dist/taxon.tsv dist/reference.tsv
 
 clean:
 	rm -rf data/ dist/ tmp/
@@ -24,6 +24,7 @@ dist/trait.json: HEAD
 	  | grep hasVersion \
 	  | grep -v terms \
 	  | grep -v tbHierarchy \
+	  | grep -v references \
 	  | grep -oE "hash://md5/[a-f0-9]{32}" \
 	  | xargs -I{} bash -c "preston cat {} | mlr --itsvlite --ojsonl --no-auto-unflatten cat" \
 	  > dist/trait.json
@@ -37,3 +38,7 @@ dist/term.tsv: HEAD
 
 dist/taxon.tsv: HEAD
 	cat HEAD | preston cat | grep hasVersion | grep tbHierarchy | preston cat > dist/taxon.tsv
+
+dist/reference.tsv: HEAD
+	cat HEAD | preston cat | grep hasVersion | grep references | preston cat > dist/references.tsv
+
