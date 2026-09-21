@@ -40,5 +40,5 @@ dist/taxon.tsv: HEAD
 	cat HEAD | preston cat | grep hasVersion | grep tbHierarchy | preston cat > dist/taxon.tsv
 
 dist/reference.tsv: HEAD
-	cat HEAD | preston cat | grep hasVersion | grep references | preston cat > dist/references.tsv
+	cat HEAD | preston cat | grep hasVersion | grep references | preston cat > dist/reference.tsv
 
