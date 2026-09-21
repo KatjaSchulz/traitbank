@@ -1,0 +1,21 @@
+ancestor.page_id, ancestor.canonical, parent_of_ancestor.page_id
+328598, "Procyon lotor", 18666
+18666, "Procyon", 7665
+7665, "Procyonidae", 46559118
+46559118, "Caniformia", 7662
+7662, "Carnivora", 42399419
+42399419, "Scrotifera", 40103843
+40103843, "Laurasiatheria", 32005829
+32005829, "Boreoeutheria", 42399417
+42399417, "Placentalia", 47048864
+47048864, "Eutheria", 47048248
+47048248, "Theria", 1642
+1642, "Mammalia", 4528578
+4528578, "Cynodontia", 4522847
+4522847, "Therapsida", 3014447
+3014447, "Synapsida", 3014446
+3014446, "Amniota", 46557930
+46557930, "Tetrapoda", 8909
+8909, "Sarcopterygii", 2775704
+2775704, "Osteichthyes", 46557929
+46557929, "Gnathostomata", 2774383

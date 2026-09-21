@@ -1,0 +1,2 @@
+p.canonical, pred.name, t.measurement, units.name, r.resource_id, p.page_id, t.eol_pk, t.source
+"Odocoileus hemionus", "body mass", "54213", "g", 694, 328651, "R788-PK291618346", "https://doi.org/10.5063/aa/nceas.196.3"
