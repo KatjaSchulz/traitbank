@@ -1,6 +1,6 @@
 # Capacity Queries
 
-Included Cypher queries and associated responses were shared by Jen Hammock on 2026-09-21 . They are said to be executed against a production instance of the neo4j v4.2.19 server that currently powers some of the data services associated with the Encyclopedia of Life (https://eol.org) .
+Included TraitBank Cypher queries and associated responses were shared by Jen Hammock on 2026-09-21 . They are said to be executed against a production instance of the neo4j v4.2.19 server that currently powers some of the data services associated with the Encyclopedia of Life (https://eol.org) . The results were reproduced independently using a provided data dump [1].
 
 # Provenance 
 
@@ -44,4 +44,4 @@ hash://md5/8407022fe528f764a202e5ffda1f037f  5_mule_deer_mass.cypher.response-p
 
 # References
 
-
+[1] Hammock, J., & Schulz, K. (2026). Encyclopedia of Life's TraitBank: Neo4j Graph Database Archive and Example Cypher Queries hash://md5/d96ce5ae7708424700ebadcd83936236 hash://sha256/baaa475538f53cfbf71e0ce6f28f4b1ef4d7ff19ffa596f3c2e4b64145c36f51 [Dataset]. Zenodo. [https://doi.org/10.5281/zenodo.22883905](https://doi.org/10.5281/zenodo.22883905).
