@@ -1,0 +1,1 @@
+MATCH (r:Resource)<-[:supplier]-(:Trait)-[:object_term]->(:Term)-[:parent_term|synonym_of*0..]->(pred:Term {uri:"http://purl.obolibrary.org/obo/GO_0050959"}) RETURN DISTINCT r.name LIMIT 500;
